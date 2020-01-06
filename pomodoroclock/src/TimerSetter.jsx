@@ -8,9 +8,9 @@ export default class TimerSetter extends Component{
             <div>
                 <h2>Session Time</h2>
                 <div>
-                    <button>-</button>
-                    <span>Duracion</span>
-                    <button>+</button>
+                    <button onClick = {this.props.onDrecrease}>-</button>
+                    <span>{this.props.taskTime}</span>
+                    <button onClick = {this.props.onIncrease}>+</button>
                 </div>
             </div>
         )
