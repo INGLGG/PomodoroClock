@@ -1,2 +1,0 @@
-# PomodoroClock
-Test Pomodoro Clock

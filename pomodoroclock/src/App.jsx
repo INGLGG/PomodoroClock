@@ -17,7 +17,7 @@ export default class App extends Component {
     this.state = {
       taskTime: Number.parseInt(defaultTime, 10),
       secTime: Number.parseInt(defaultTime, 10) * 60,
-      isOnPause: false,
+      canBePause: false,
       isOn: false,
       clock: null,
       taskName: ''
@@ -34,12 +34,14 @@ export default class App extends Component {
   onStartorPause() {
     if (!this.state.isOn) {
       this.setState({
-        isOn: !this.state.isOn,
+        isOn: true,
+        canBePause : true,
         clock: setInterval(this.clock,1000)
       })
-    } else {
+    } else if(this.state.isOn) {
       this.setState({
-        isOn: !this.state.isOn,
+        isOn: false,
+        canBePause: false,
         clock: null
       })
       this.state.clock && clearInterval(this.state.clock);
@@ -50,6 +52,7 @@ export default class App extends Component {
     this.setState({
       taskTime: Number.parseInt(defaultTime, 10),
       secTime: Number.parseInt(defaultTime, 10) * 60,
+      canBePause: false,
       isOn: false,
       taskName: '',
       clock: null
@@ -78,7 +81,6 @@ export default class App extends Component {
 
   clock() {
     let seconds = this.state.secTime
-
     if (this.state.isOn) {
       seconds--
       this.setState({
@@ -88,7 +90,6 @@ export default class App extends Component {
     if (seconds === 0) {
       this.onStop();
     }
-
   }
 
   render() {
@@ -110,7 +111,8 @@ export default class App extends Component {
         <ControlButtons
           onStop={this.onStop}
           onStartorPause={this.onStartorPause}
-          isOn={this.isOn}
+          isOn={this.state.isOn}
+          canBePause={this.state.canBePause}
         />
       </div>
     )
