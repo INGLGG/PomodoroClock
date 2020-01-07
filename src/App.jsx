@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "bootsstrap/dist/css/bootsstrap.min.css";
+import "bootstrap/dist/css/bootsstrap.min.css";
 import $ from "jquery";
 import "bootstrap/dist/js/bootstrap.bundle.min"
 import './App.css';
