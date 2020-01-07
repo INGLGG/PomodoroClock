@@ -1,22 +1,23 @@
 .time {
-    color: white;
-    background: tomato;
-    width: 260px;
-    height: 260px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    flex-direction: column;
-  }
-  
-  .labelTime {
-    color: green;
-    background:tomato;
-    font-size: 30px;
-    flex: 0 0 120px;
-  }
+  color: white;
+  background: tomato;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  flex-direction: column;
+}
 
-  .timediv{
-      background: tomato;
-  }
+.labelTime {
+  font-weight: bold;
+  color: white;
+  background: tomato;
+  font-size: 30px;
+  flex: 0 0 120px;
+}
+
+.timediv {
+  background: tomato;
+}

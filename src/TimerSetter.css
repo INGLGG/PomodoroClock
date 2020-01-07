@@ -1,0 +1,41 @@
+#settercontainer {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submitform {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitform label {
+  color: red;
+}
+
+.submitform input {
+  background-color: white;
+}
+
+#taskinput {
+  color: white;
+}
+
+.setterbuttons {
+  color: white;
+  margin-bottom: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+input[type="text"]:disabled {
+  background: grey;
+}
+
+button:disabled {
+  background: grey;
+}

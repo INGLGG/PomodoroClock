@@ -1,5 +1,5 @@
-.controlButtons{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 50px;
+.controlButtons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
