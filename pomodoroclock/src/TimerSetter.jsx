@@ -1,21 +1,27 @@
-import React , {Component} from 'react';
+import React from 'react';
 import './TimerSetter.css';
 
-export default class TimerSetter extends Component{
+export default function TimerSetter({
+    onIncrease,
+    onDrecrease,
+    taskTime,
+    isRunning
+}) {
 
-    render(){
-        return(
+    return (
+        <div>
             <div>
-                <h2>Session Time</h2>
-                <div>
-                    <button onClick = {this.props.onDrecrease}>-</button>
-                    <span>{this.props.taskTime}</span>
-                    <button onClick = {this.props.onIncrease}>+</button>
-                </div>
+                <label>Task Time</label>
             </div>
-        )
-    }
-
+            <div>
+                <button disabled={isRunning} onClick={onDrecrease}>-</button>
+                <span>{taskTime}</span>
+                <button disabled={isRunning} onClick={onIncrease}>+</button>
+            </div>
+        </div>
+    )
 }
+
+
 
 

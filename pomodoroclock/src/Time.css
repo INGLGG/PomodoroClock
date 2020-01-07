@@ -1,0 +1,22 @@
+.time {
+    color: white;
+    background: tomato;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    flex-direction: column;
+  }
+  
+  .labelTime {
+    color: green;
+    background:tomato;
+    font-size: 30px;
+    flex: 0 0 120px;
+  }
+
+  .timediv{
+      background: tomato;
+  }

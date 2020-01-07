@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import "bootsstrap/dist/css/bootsstrap.min.css";
+import $ from "jquery";
+import "bootstrap/dist/js/bootstrap.bundle.min"
 import './App.css';
 import Time from './Time';
 import TimerSetter from './TimerSetter';
 import ControlButtons from './ControlButtons';
-import ReactModal from 'react-modal';
 
 const defaultTime = 1;
 const defaultTaskName = '';
@@ -20,10 +22,9 @@ export default class App extends Component {
       canBePause: false,
       isOn: false,
       clock: null,
-      taskName: ''
+      taskName: defaultTaskName
     }
 
-    this.intervalHandler = null;
     this.clock = this.clock.bind(this);
     this.onStartorPause = this.onStartorPause.bind(this);
     this.onStop = this.onStop.bind(this);
@@ -54,7 +55,7 @@ export default class App extends Component {
       secTime: Number.parseInt(defaultTime, 10) * 60,
       canBePause: false,
       isOn: false,
-      taskName: '',
+      taskName: defaultTaskName,
       clock: null
     })
     this.state.clock && clearInterval(this.state.clock);
@@ -94,26 +95,39 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h1>Pomodoro Clock</h1>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-sm-12 col-md-4">
+            <div className="App">
+              <h1>Pomodoro Clock</h1>
+            </div>
+          </div>
         </div>
-
-
-        <TimerSetter
-          taskTime={this.state.taskTime}
-          onIncrease={this.onIncrease}
-          onDrecrease={this.onDrecrease}
-        />
-        <Time
-          secTime={this.state.secTime}
-        />
-        <ControlButtons
-          onStop={this.onStop}
-          onStartorPause={this.onStartorPause}
-          isOn={this.state.isOn}
-          canBePause={this.state.canBePause}
-        />
+        <div className="row justify-content-center">
+          <div className="col-sm-12 col-md-4">
+            <TimeSetter
+              isRunning={this.state.isOn}
+              taskTime={this.state.taskTime}
+              onIncrease={this.onIncrease}
+              onDecrease={this.onDecrease}
+            />
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-sm-12 col-md-4 timeapp">
+            <Time secTime={this.state.secTime} />
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-sm-12 col-md-4">
+            <ControlButtons
+              onStop={this.onStop}
+              onStartorPause={this.onStartorPause}
+              canBePause={this.state.canBePause}
+              isOn={this.state.isOn}
+            />
+          </div>
+        </div>
       </div>
     )
 
