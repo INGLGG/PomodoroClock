@@ -36,14 +36,12 @@ export default class App extends Component {
         isOn: true,
         clock: setInterval(this.clock, 1000)
       });
-      console.log(this.state);
     } else if (this.state.isOn && !this.state.canBePause) {
       this.setState({
         isOn: false,
         canBePause: true,
         clock: null
       });
-      console.log(this.state);
       this.state.clock && clearInterval(this.state.clock);
     } else {
       this.setState({
@@ -51,7 +49,6 @@ export default class App extends Component {
         canBePause: false,
         clock: setInterval(this.clock, 1000)
       });
-      console.log(this.state);
     }
   }
 
