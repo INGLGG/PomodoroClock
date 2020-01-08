@@ -32,6 +32,8 @@ export default class TimeSetter extends Component {
               type="text"
               className="form-control"
               placeholder="Task Name"
+              pattern="^.{1,13}$"
+              title="Max 13 characters"
               value={this.state.value}
               onChange={this.handlerChange}
             />
